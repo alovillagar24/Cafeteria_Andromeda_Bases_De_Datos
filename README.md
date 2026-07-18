@@ -1,33 +1,33 @@
 **************************************************************************
 *                                                                        *
-*  [SYSTEM_ID: CAFETERIA_ANDROMEDA_DB]                                   *
-*  [LAST_UPDATE: 2026-07-18]                                             *
-*  [DOC_VERSION: FINAL_RELEASE]                                          *
+*  [ID_SISTEMA: CAFETERIA_ANDROMEDA_DB]                                  *
+*  [ULTIMA_ACTUALIZACION: 2026-07-18]                                    *
+*  [VERSION_DOC: VERSION_FINAL]                                          *
 *                                                                        *
 **************************************************************************
 
-> CONFIG_MANIFEST:
-  - /schema    : DDL DEFINITIONS. [EXECUTE FIRST]
-  - /data      : DML DATASETS. [EXECUTE AFTER ALTERS]
-  - /queries   : BUSINESS LOGIC, INTEGRITY TESTS & CLEANUP SCRIPTS.
-  - /diagrams  : ARCHITECTURE REFERENCE.
+> MANIFIESTO_CONFIGURACION:
+  - /schema    : DEFINICIONES DDL. [EJECUTAR PRIMERO]
+  - /data      : CONJUNTOS DE DATOS DML. [EJECUTAR DESPUES DE LOS ALTERS]
+  - /queries   : LOGICA DE NEGOCIO, PRUEBAS DE INTEGRIDAD Y SCRIPTS DE LIMPIEZA.
+  - /diagrams  : REFERENCIA DE ARQUITECTURA.
 
-> DEPLOYMENT_SEQUENCE (MANDATORY):
-  1. RUN /schema/01_create_tables.sql  (TABLE STRUCTURES)
-  2. RUN /schema/02_alter_tables.sql    (CONSTRAINTS & MODIFICATIONS)
-  3. RUN /data/01_catalogos_iniciales.sql (MASTER DATA)
-  4. RUN /data/02_datos_prueba.sql        (TEST RECORDS)
-  5. RUN /data/03_datos_prueba_after_alters.sql (POST-CONSTRAINT RECORDS)
+> SECUENCIA_DESPLIEGUE (OBLIGATORIA):
+  1. EJECUTAR /schema/01_create_tables.sql  (ESTRUCTURAS DE TABLAS)
+  2. EJECUTAR /schema/02_alter_tables.sql    (RESTRICCIONES Y MODIFICACIONES)
+  3. EJECUTAR /data/01_catalogos_iniciales.sql (DATOS MAESTROS)
+  4. EJECUTAR /data/02_datos_prueba.sql        (REGISTROS DE PRUEBA)
+  5. EJECUTAR /data/03_datos_prueba_after_alters.sql (REGISTROS POST-RESTRICCIONES)
 
-> INTEGRITY_VERIFICATION:
-  - SYSTEM INTEGRITY: RUN /queries/consultas_de_integridad.sql
-  - BUSINESS LOGIC: RUN /queries/consultas_logicas_negocio.sql
-  - CLEANUP: USE /queries/scripts_limpieza.sql FOR SYSTEM RESET.
+> VERIFICACION_INTEGRIDAD:
+  - INTEGRIDAD DEL SISTEMA: EJECUTAR /queries/consultas_de_integridad.sql
+  - LOGICA DE NEGOCIO: EJECUTAR /queries/consultas_logicas_negocio.sql
+  - LIMPIEZA: USAR /queries/scripts_limpieza.sql PARA REINICIO DEL SISTEMA.
 
-> NOTES:
-  - ALL DDL MODIFICATIONS MUST BE APPLIED BEFORE DML INSERTS.
-  - THE '03_DATOS_PRUEBA_AFTER_ALTERS.SQL' ENSURES THAT RECORDS 
-    COMPLY WITH THE CONSTRAINTS DEFINED IN THE ALTER PHASE.
+> NOTAS:
+  - TODAS LAS MODIFICACIONES DDL DEBEN APLICARSE ANTES DE LAS INSERCIONES DML.
+  - EL ARCHIVO '03_DATOS_PRUEBA_AFTER_ALTERS.SQL' ASEGURA QUE LOS REGISTROS 
+    CUMPLAN CON LAS RESTRICCIONES DEFINIDAS EN LA FASE DE ALTER.
 
 **************************************************************************
-[SYSTEM_READY_FOR_INITIALIZATION]
+[SISTEMA_LISTO_PARA_INICIALIZACION]
