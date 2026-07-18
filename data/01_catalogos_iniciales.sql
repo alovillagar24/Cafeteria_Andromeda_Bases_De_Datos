@@ -1,4 +1,4 @@
---productos
+-- productos
 INSERT INTO productos (nombre, precio_unitario, categoria) VALUES 
 ('Cafe', 25, 'Bebidas'), ('Te', 20, 'Bebidas'), ('Torta', 40, 'Alimentos'), ('Pan', 10, 'Repostería'),
 ('Jugo', 30, 'Bebidas'), ('Dona', 15, 'Repostería'), ('Sopa', 35, 'Alimentos'), ('Taco', 25, 'Alimentos'),
