@@ -1,0 +1,47 @@
+{
+  "project": "Cafeteria_Andromeda",
+  "entities": {
+    "clientes": [
+      "id_cliente",
+      "nombre_completo",
+      "telefono",
+      "correo_electronico",
+      "fecha_registro"
+    ],
+    "productos": [
+      "id_producto",
+      "nombre",
+      "descripcion",
+      "precio_unitario",
+      "categoria",
+      "estado"
+    ],
+    "pedidos": [
+      "id_pedido",
+      "fecha_hora",
+      "estado_pedido",
+      "metodo_pago",
+      "monto_total",
+      "id_cliente"
+    ],
+    "detalles_pedidos": [
+      "id_pedido",
+      "id_producto",
+      "cantidad",
+      "precio_cobrado"
+    ],
+    "promociones": [
+      "id_promocion",
+      "nombre_promocion",
+      "descripcion",
+      "descuento_aplicado",
+      "fecha_inicio",
+      "fecha_fin"
+    ]
+  },
+  "relationships": {
+    "cliente_realiza_pedido": "1:N",
+    "pedido_contiene_productos": "N:M",
+    "producto_tiene_promocion": "N:M"
+  }
+}
