@@ -56,3 +56,12 @@ CREATE TABLE productos_promociones (
     FOREIGN KEY (id_producto) REFERENCES productos(id_producto),
     FOREIGN KEY (id_promocion) REFERENCES promociones(id_promocion)
 );
+
+-- Nueva tabla de Auditoría para el historial
+CREATE TABLE auditoria_operaciones (
+    id_log INT AUTO_INCREMENT PRIMARY KEY,
+    tabla_afectada VARCHAR(50),
+    operacion VARCHAR(10), -- INSERT, UPDATE, DELETE
+    fecha_cambio TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Registro exacto del movimiento
+    detalles_json JSON -- Información estructurada del cambio
+);
