@@ -26,3 +26,13 @@ ADD COLUMN anio_fiscal YEAR AS (YEAR(fecha_hora)); -- Columna calculada
 -- Promociones: Se ajusta el tipo de descripción a TEXT
 ALTER TABLE promociones 
 MODIFY COLUMN descripcion TEXT;
+
+-- Tablas existentes con nuevas capacidades
+ALTER TABLE productos 
+ADD COLUMN configuraciones_especiales JSON, -- Almacena opciones como: {"sin_azucar": true, "temperatura": "caliente"}
+ADD COLUMN observaciones TEXT; -- Notas específicas sobre el producto
+
+ALTER TABLE pedidos 
+ADD COLUMN historial_movimientos JSON, -- Log de estados: {"creado": "2026-07-05 14:00", "preparado": "2026-07-05 14:15"}
+ADD COLUMN fecha_operacion DATE; -- Fecha contable de la operación
+
