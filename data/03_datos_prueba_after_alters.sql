@@ -18,7 +18,6 @@ VALUES
 ('2026-07-05 14:00:00', '14:05:00', '2026-07-05', 'Entregado', 'Tarjeta', 125.00, 1, 
  '{"creado": "2026-07-05 14:00:00", "preparado": "2026-07-05 14:05:00", "entregado": "2026-07-05 14:10:00"}');
  
-
 -- Registro de auditoría (historial de movimientos)
 INSERT INTO auditoria_operaciones (tabla_afectada, operacion, detalles_json) 
 VALUES 
