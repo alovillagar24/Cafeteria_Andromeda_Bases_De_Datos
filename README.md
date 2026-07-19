@@ -2,27 +2,39 @@
 *                                                                        *
 *  [ID_SISTEMA: CAFETERIA_ANDROMEDA_DB]                                  *
 *  [ULTIMA_ACTUALIZACION: 2026-07-18]                                    *
-*  [VERSION_DOC: VERSION_FINAL]                                          *
+*  [VERSION_DOC: FINAL_RELEASE]                                          *
 *                                                                        *
 **************************************************************************
 
-> MANIFIESTO_CONFIGURACION:
-  - /schema    : DEFINICIONES DDL. [EJECUTAR PRIMERO]
-  - /data      : CONJUNTOS DE DATOS DML. [EJECUTAR DESPUES DE LOS ALTERS]
-  - /queries   : LOGICA DE NEGOCIO, PRUEBAS DE INTEGRIDAD Y SCRIPTS DE LIMPIEZA.
-  - /diagrams  : REFERENCIA DE ARQUITECTURA.
+> INTRODUCCION:
+  Este repositorio contiene la estructura, el diseño y la lógica de negocio para 
+  la base de datos de "Cafetería Andrómeda". El proyecto ha sido desarrollado bajo 
+  un enfoque modular y profesional, garantizando la integridad de los datos y el 
+  cumplimiento de las reglas de negocio establecidas. A través de una jerarquía 
+  de archivos claramente definida, este sistema facilita tanto el despliegue 
+  técnico como el análisis operativo, asegurando un entorno de gestión robusto, 
+  escalable y listo para su implementación.
 
-> SECUENCIA_DESPLIEGUE (OBLIGATORIA):
-  1. EJECUTAR /schema/01_create_tables.sql  (ESTRUCTURAS DE TABLAS)
-  2. EJECUTAR /schema/02_alter_tables.sql    (RESTRICCIONES Y MODIFICACIONES)
-  3. EJECUTAR /data/01_catalogos_iniciales.sql (DATOS MAESTROS)
-  4. EJECUTAR /data/02_datos_prueba.sql        (REGISTROS DE PRUEBA)
-  5. EJECUTAR /data/03_datos_prueba_after_alters.sql (REGISTROS POST-RESTRICCIONES)
+> MANIFIESTO_CONFIGURACION:
+  - /schema          : DEFINICIONES DDL.
+  - /procedures      : LOGICA DE PROCEDIMIENTOS ALMACENADOS.
+  - /programmability : TRIGGERS Y LÓGICA AUTOMATIZADA.
+  - /data            : CONJUNTOS DE DATOS DML.
+  - /queries         : PRUEBAS DE INTEGRIDAD Y REPORTES.
+  - /diagrams        : REFERENCIA DE ARQUITECTURA.
+
+> SECUENCIA_DESPLIEGUE (PASOS DE IMPLEMENTACION):
+  1. CREACION: Ejecutar 'CREATE DATABASE' para inicializar el entorno.
+  2. ESTRUCTURA: Ejecutar /schema/01_create_tables.sql para definir tablas.
+  3. RESTRICCIONES: Ejecutar /schema/02_alter_tables.sql para claves y reglas.
+  4. PROGRAMACION: Ejecutar scripts en /procedures/ y /programmability/01_triggers.sql.
+  5. DATOS MAESTROS: Ejecutar /data/01_catalogos_iniciales.sql.
+  6. INSERCION OPERATIVA: Ejecutar /data/02_datos_prueba.sql y 03_datos_prueba_after_alters.sql.
 
 > VERIFICACION_INTEGRIDAD:
-  - INTEGRIDAD DEL SISTEMA: EJECUTAR /queries/consultas_de_integridad.sql
-  - LOGICA DE NEGOCIO: EJECUTAR /queries/consultas_logicas_negocio.sql
-  - LIMPIEZA: USAR /queries/scripts_limpieza.sql PARA REINICIO DEL SISTEMA.
+  - INTEGRIDAD: EJECUTAR /queries/consultas_de_integridad.sql
+  - NEGOCIO: EJECUTAR /queries/consultas_logicas_negocio.sql
+  - LIMPIEZA: USAR /queries/scripts_limpieza.sql PARA RESETEO.
 
 > NOTAS:
   - TODAS LAS MODIFICACIONES DDL DEBEN APLICARSE ANTES DE LAS INSERCIONES DML.
