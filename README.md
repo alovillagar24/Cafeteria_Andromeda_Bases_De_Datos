@@ -1,7 +1,11 @@
 **************************************************************************
 *                                                                        *
+*  PROYECTO          : Cafeteria_Universitaria                           *
+*  ESTUDIANTE        : Alonso Villanueva                                 *
+*  ORGANIZACIÓN/CASO : Café Andrómeda                                    *
+*  FECHA             : 2026-07-18                                        *
+*                                                                        *
 *  [ID_SISTEMA: CAFETERIA_ANDROMEDA_DB]                                  *
-*  [ULTIMA_ACTUALIZACION: 2026-07-18]                                    *
 *  [VERSION_DOC: FINAL_RELEASE]                                          *
 *                                                                        *
 **************************************************************************
